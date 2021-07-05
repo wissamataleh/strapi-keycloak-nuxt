@@ -581,6 +581,38 @@ const getProfile = async (provider, query, callback) => {
         });
       break;
     }
+    case 'keycloak': {
+      const keycloak = purest({
+        provider: 'keycloak',
+        config: {
+          keycloak: {
+            'https://id.jordanopensource.org/auth/realms/JOSA': {
+              __domain: {
+                auth: {
+                  auth: { bearer : '[0]'},
+                },
+              },
+              '{endpoint}': {
+                __path: {
+                  alias: '__default'
+                }
+              }
+            }
+          }
+        }
+      });
+      keycloak.query().get('protocol/openid-connect/userinfo').auth(access_token).request((err, res, body) => {
+        if (err) {
+          callback(err);
+        } else {
+          callback(null, {
+            username: body.preferred_username,
+            email: body.email
+          });
+        }
+      });
+      break;
+    }
     default:
       callback(new Error('Unknown provider.'));
       break;
