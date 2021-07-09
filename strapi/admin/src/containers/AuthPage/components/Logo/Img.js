@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const Img = styled.img`
-  height: 40px;
+  width: 240px;
+  height: auto;
 `;
 
 export default Img;

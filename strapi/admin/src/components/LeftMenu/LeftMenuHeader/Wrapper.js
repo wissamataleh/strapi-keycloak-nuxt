@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Logo from '../../../assets/images/logo-strapi.png';
 
 const Wrapper = styled.div`
-  background-color: #007eff;
+  background-color: ${props => props.theme.main.colors.strapi['blue-dark']};
   padding-left: 2rem;
   height: ${props => props.theme.main.sizes.leftMenu.height};
 
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     background-image: url(${Logo});
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: auto 2.5rem;
+    background-size: auto 5rem;
   }
 `;
 

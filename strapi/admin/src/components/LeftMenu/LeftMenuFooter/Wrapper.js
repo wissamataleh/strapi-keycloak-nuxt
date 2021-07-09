@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  background: ${props => props.theme.main.colors.strapi['blue-darker']};
+  background: ${props => props.theme.main.colors.strapi['blue-dark']};
   bottom: 0;
   .poweredBy {
     width: 100%;
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     padding-left: 15px;
     padding-right: 15px;
     line-height: 3rem;
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: transparent;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.05rem;
